@@ -1,7 +1,8 @@
 package br.usjt.projeto.entity;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -22,15 +23,19 @@ public class Atendimento {
 	@Enumerated(EnumType.STRING)
 	private TipoStatus status;
 
-	private LocalDateTime dataInicio;
+	@Column(name = "data_inicio")
+	private Date dataInicio;
+	
+	@Column(name = "data_termino")
+	private Date dataTermino;
 
-	private LocalDateTime dataTermino;
-
+	@Column(name = "previsao_inicio")
 	@NotNull(message = "Campo previsaoInicio não pode ser nulo.")
-	private LocalDateTime previsaoInicio;
+	private Date previsaoInicio;
 
+	@Column(name = "previsao_termino")
 	@NotNull(message = "Campo previsaoTermino não pode ser nulo.")
-	private LocalDateTime previsaoTermino;
+	private Date previsaoTermino;
 
 	@ManyToOne
 	@JoinColumn(name = "id_senha")
@@ -56,35 +61,35 @@ public class Atendimento {
 		this.status = status;
 	}
 
-	public LocalDateTime getDataInicio() {
+	public Date getDataInicio() {
 		return dataInicio;
 	}
 
-	public void setDataInicio(LocalDateTime dataInicio) {
+	public void setDataInicio(Date dataInicio) {
 		this.dataInicio = dataInicio;
 	}
 
-	public LocalDateTime getDataTermino() {
+	public Date getDataTermino() {
 		return dataTermino;
 	}
 
-	public void setDataTermino(LocalDateTime dataTermino) {
+	public void setDataTermino(Date dataTermino) {
 		this.dataTermino = dataTermino;
 	}
 
-	public LocalDateTime getPrevisaoInicio() {
+	public Date getPrevisaoInicio() {
 		return previsaoInicio;
 	}
 
-	public void setPrevisaoInicio(LocalDateTime previsaoInicio) {
+	public void setPrevisaoInicio(Date previsaoInicio) {
 		this.previsaoInicio = previsaoInicio;
 	}
 
-	public LocalDateTime getPrevisaoTermino() {
+	public Date getPrevisaoTermino() {
 		return previsaoTermino;
 	}
 
-	public void setPrevisaoTermino(LocalDateTime previsaoTermino) {
+	public void setPrevisaoTermino(Date previsaoTermino) {
 		this.previsaoTermino = previsaoTermino;
 	}
 

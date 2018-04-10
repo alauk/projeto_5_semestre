@@ -18,4 +18,8 @@ public class ServicoService {
 		return dao.carregaServicos();
 	}
 
+	public Servico carregarBySigla(String siglaServico) {
+		return dao.carregarBySigla(siglaServico);
+	}
+
 }

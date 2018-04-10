@@ -1,5 +1,7 @@
 package br.usjt.projeto.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -16,9 +18,16 @@ public class SenhaDAO {
 	EntityManager manager;
 
 	public Senha carregar(Fila fila) {
-		Query query =  manager.createQuery("select s from Senha s where s.fila = :fila");
-		query.setParameter("fila", fila);
+		Query query =  manager.createQuery("select s from Senha s where id = :fila");
+		query.setParameter("fila", fila.getId());
 		return (Senha) query.getSingleResult();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Senha> getLastSenha(Fila fila) {
+		Query query =  manager.createQuery("select s from Senha s inner join s.fila where s.fila.sigla = :sigla");
+		query.setParameter("sigla", fila.getSigla());
+		return query.getResultList();
 	}
 
 	public Senha gerarSenha(Senha novaSenha) {

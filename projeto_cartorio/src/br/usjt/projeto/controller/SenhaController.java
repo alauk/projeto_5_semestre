@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.usjt.projeto.entity.Senha;
+import br.usjt.projeto.service.AtendimentoService;
 import br.usjt.projeto.service.FilaService;
 import br.usjt.projeto.service.SenhaService;
 import br.usjt.projeto.service.ServicoService;
@@ -23,6 +25,9 @@ public class SenhaController {
 
 	@Autowired
 	private FilaService filaService;
+	
+	@Autowired
+	private AtendimentoService atendimentoService;
 
 	@RequestMapping("index")
 	public String inicio() {
@@ -39,7 +44,8 @@ public class SenhaController {
 	@RequestMapping("/gera_senha")
 	public String geraSenha(String fila, String servico) {
 		try {
-			service.gerarSenha(fila, servico);
+			Senha novaSenha = service.gerarSenha(fila, servico);
+			atendimentoService.gerarAtendimento(novaSenha, servico);
 			return "SenhaGerada";
 		} catch (Exception e) {
 			e.printStackTrace();

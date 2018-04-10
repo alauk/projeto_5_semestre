@@ -2,6 +2,7 @@ package br.usjt.projeto.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,9 +24,11 @@ public class Senha {
 	@NotNull(message = "Campo codigo não pode ser nulo.")
 	private String codigo;
 
-	private Date data_abertura;
+	@Column(name = "data_abertura")
+	private Date dataAbertura;
 
-	private Date data_fechamento;
+	@Column(name = "data_fechamento")
+	private Date dataFechamento;
 
 	@ManyToOne
 	@JoinColumn(name = "id_fila")
@@ -55,20 +58,20 @@ public class Senha {
 		this.codigo = codigo;
 	}
 
-	public Date getData_abertura() {
-		return data_abertura;
+	public Date getDataAbertura() {
+		return dataAbertura;
 	}
 
-	public void setData_abertura(Date data_abertura) {
-		this.data_abertura = data_abertura;
+	public void setDataAbertura(Date dataAbertura) {
+		this.dataAbertura = dataAbertura;
 	}
 
-	public Date getData_fechamento() {
-		return data_fechamento;
+	public Date getDatFechamento() {
+		return dataFechamento;
 	}
 
-	public void setData_fechamento(Date data_fechamento) {
-		this.data_fechamento = data_fechamento;
+	public void setDataFechamento(Date dataFechamento) {
+		this.dataFechamento = dataFechamento;
 	}
 
 	public Fila getFila() {
@@ -81,8 +84,8 @@ public class Senha {
 
 	@Override
 	public String toString() {
-		return "Senha [id=" + id + ", numero=" + numero + ", codigo=" + codigo + ", data_abertura=" + data_abertura
-				+ ", data_fechamento=" + data_fechamento + ", fila=" + fila + "]";
+		return "Senha [id=" + id + ", numero=" + numero + ", codigo=" + codigo + ", dataAbertura=" + dataAbertura
+				+ ", dataFechamento=" + dataFechamento + ", fila=" + fila + "]";
 	}
 
 }

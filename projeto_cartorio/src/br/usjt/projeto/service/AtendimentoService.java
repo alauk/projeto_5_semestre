@@ -1,5 +1,6 @@
 package br.usjt.projeto.service;
 
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
@@ -39,6 +40,10 @@ public class AtendimentoService {
 			
 		}
 
+	}
+	
+	public List<Atendimento> listarAtendimento() throws IOException{
+		return dao.listarAtendimento();
 	}
 
 }

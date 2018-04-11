@@ -1,5 +1,7 @@
 package br.usjt.projeto.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -13,8 +15,14 @@ public class AtendimentoDAO {
 	@PersistenceContext
 	private EntityManager manager;
 	
-	public void gerarAtendimento(Atendimento atendimento) {
-		manager.persist(atendimento);
+	public Atendimento gerarAtendimento(Atendimento newAtendimento) {
+		manager.persist(newAtendimento);
+		return newAtendimento;
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Atendimento> listarAtendimento() {
+		return manager.createQuery("select a from Atendimento a").getResultList();
 	}
 
 }

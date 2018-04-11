@@ -15,7 +15,8 @@
 	</head>
 	<body>
 		<div id="main" class="container">
-			<a href="form_senha" class="page-header">gerar Senha</a>
+			<a href="form_senha" class="page-header">Gerar Senha</a><br>
+			<a href="lista_atendimento" class="page-header">Listar Atendimentos</a><br>
 		</div>
 	</body>
 </html>

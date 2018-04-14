@@ -24,7 +24,7 @@
         	<div id="amarela" class="row col-md-4" align="center" style="background-color: #F7E99F; align-content: center">
         		<h3><b>Senha</b></h3><hr>
         		<h1><b>${senha.codigo}</b></h1><hr>
-        		<h3>Serviço</h3>
+        		<h3>${servico.nome}</h3>
         		<h3><fmt:formatDate pattern="dd/MM/yyyy HH:mm:ss" value="${senha.dataAbertura}"></fmt:formatDate></h3>
         	</div>	
         	

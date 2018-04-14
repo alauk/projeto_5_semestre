@@ -34,5 +34,11 @@ public class SenhaDAO {
 		manager.persist(novaSenha);
 		return novaSenha;
 	}
+	
+	public int pegarTotalSenhasServico(int idServico) {
+		
+		
+		return -1;
+	}
 
 }

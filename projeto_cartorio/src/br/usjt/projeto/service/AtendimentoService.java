@@ -1,6 +1,9 @@
 package br.usjt.projeto.service;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -43,7 +46,19 @@ public class AtendimentoService {
 	}
 	
 	public List<Atendimento> listarAtendimento() throws IOException{
-		return dao.listarAtendimento();
+		//COMPLETAR ORDENAÇÃO
+		List<Atendimento> atendimentos = dao.listarAtendimento();
+		List<Atendimento> atendimentosHoje = new ArrayList<>();
+		for (Atendimento atendimento : atendimentos) {
+			Senha senha = atendimento.getSenha();
+			LocalDateTime now = LocalDateTime.now();
+			LocalDateTime dataAbertura = LocalDateTime.ofInstant(senha.getDataAbertura().toInstant(), ZoneId.systemDefault());
+			if (now.getMonth().equals(dataAbertura.getMonth()) && now.getDayOfMonth() == dataAbertura.getDayOfMonth()) {
+				atendimentosHoje.add(atendimento);
+			}
+		}
+		List<Atendimento> atedimentoOrdenado = new ArrayList<>();
+		atendimentosHoje.sort((a1, a2) -> a1.getSenha().getFila().getNome().compareTo(a2.getSenha().getFila().getNome()));
+		return atendimentosHoje;
 	}
-
 }

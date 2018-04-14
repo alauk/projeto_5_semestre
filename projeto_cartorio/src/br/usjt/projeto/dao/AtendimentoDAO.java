@@ -22,7 +22,7 @@ public class AtendimentoDAO {
 
 	@SuppressWarnings("unchecked")
 	public List<Atendimento> listarAtendimento() {
-		return manager.createQuery("select a from Atendimento a").getResultList();
+		return manager.createQuery("select a from Atendimento a where a.status = 'ABERTO' group by a.senha").getResultList();
 	}
 
 }

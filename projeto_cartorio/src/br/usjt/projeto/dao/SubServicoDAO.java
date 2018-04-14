@@ -23,5 +23,4 @@ public class SubServicoDAO {
 		query.setParameter("servico", servico);
 		return query.getResultList();
 	}
-	
 }

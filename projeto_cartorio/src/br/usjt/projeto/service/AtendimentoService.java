@@ -5,7 +5,6 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -60,5 +59,22 @@ public class AtendimentoService {
 		List<Atendimento> atedimentoOrdenado = new ArrayList<>();
 		atendimentosHoje.sort((a1, a2) -> a1.getSenha().getFila().getNome().compareTo(a2.getSenha().getFila().getNome()));
 		return atendimentosHoje;
+	}
+	
+	
+	public Atendimento carregar(int id) throws IOException {
+		return dao.carregar(id);
+	}
+	
+	public void gerarRegistrarAtendimento(Atendimento atendimento) {
+		atendimento.setDataInicio(new Date());
+		atendimento.setStatus(TipoStatus.EM_ANDAMENTO);
+		dao.gerarRegistroAtendimento(atendimento);
+	}
+	
+	public void fecharRegistroAtendimento(Atendimento atendimento) {
+		atendimento.setDataTermino(new Date());
+		atendimento.setStatus(TipoStatus.FINALIZADO);
+		dao.fecharRegistroAtendimento(atendimento);
 	}
 }

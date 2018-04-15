@@ -77,5 +77,17 @@ public class AtendimentoDAO {
 		
 		return tempoTotal;
 	}
+	
+	public Atendimento carregar(int id) throws IOException {
+		return manager.find(Atendimento.class, id);
+	}
+	
+	public void gerarRegistroAtendimento(Atendimento atendimento) {
+		manager.merge(atendimento);
+	}
+	
+	public void fecharRegistroAtendimento(Atendimento atendimento) {
+		manager.merge(atendimento);
+	}
 
 }

@@ -17,6 +17,7 @@
 		<div id="main" class="container">
 			<a href="form_senha" class="page-header">Gerar Senha</a><br>
 			<a href="lista_atendimento" class="page-header">Listar Atendimentos</a><br>
+			<a href="teste_tempo" class="page-header">Teste Tempo</a><br>
 		</div>
 	</body>
 </html>

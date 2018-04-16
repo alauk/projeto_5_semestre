@@ -66,4 +66,8 @@ public class SenhaService {
 		return fila.getSigla() + siglaServico + numero;
 	}
 
+	public int pegarTotalSenhasServico(int idServico) {
+		return dao.pegarTotalSenhasServico(idServico);
+	}
+
 }

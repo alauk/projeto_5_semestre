@@ -61,7 +61,7 @@ public class AtendimentoService {
 		atendimentosHoje.sort((a1, a2) -> a1.getSenha().getFila().getNome().compareTo(a2.getSenha().getFila().getNome()));
 		return atendimentosHoje;
 	}
-	
+
 	public Atendimento carregar(int id) throws IOException {
 		return dao.carregar(id);
 	}

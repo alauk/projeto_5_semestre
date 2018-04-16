@@ -1,16 +1,26 @@
 package br.usjt.projeto.controller;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.usjt.projeto.entity.Atendimento;
 import br.usjt.projeto.service.AtendimentoService;
+import br.usjt.projeto.service.SenhaService;
 
+
+@Controller
+@Transactional
 public class AtendimentoController {
 
 	@Autowired
 	private AtendimentoService atendimentoService;
+	
+	@Autowired
+	private SenhaService senhaService;
 	
 	@RequestMapping("/registro_atendimento")
 	public String gerarRegistroAtendimento(Atendimento atendimento, Model model) {
@@ -41,5 +51,13 @@ public class AtendimentoController {
 			e.printStackTrace();
 			return "Erro";
 		}
+	}
+	
+	@RequestMapping("teste_tempo")
+	public String pegarTempoTotalAtendimentoServico(int idServico, Model model) {
+		int qtd = senhaService.pegarTotalSenhasServico(idServico);
+		atendimentoService.tempoMedioAtendimentoServico(idServico, senhaService.pegarTotalSenhasServico(idServico));
+		
+		return "TesteTempo";
 	}
 }

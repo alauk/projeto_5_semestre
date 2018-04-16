@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -61,7 +62,6 @@ public class AtendimentoService {
 		return atendimentosHoje;
 	}
 	
-	
 	public Atendimento carregar(int id) throws IOException {
 		return dao.carregar(id);
 	}
@@ -76,5 +76,14 @@ public class AtendimentoService {
 		atendimento.setDataTermino(new Date());
 		atendimento.setStatus(TipoStatus.FINALIZADO);
 		dao.fecharRegistroAtendimento(atendimento);
+	}
+	
+
+	public long pegarTempoTotalAtendimentoServico(int idServico) {
+		return dao.pegarTempoTotalAtendimentoServico(idServico);
+	}
+
+	public long tempoMedioAtendimentoServico(int idServico, int qtdSenhas) {
+		return dao.tempoMedioAtendimentoServico(idServico, qtdSenhas);
 	}
 }

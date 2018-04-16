@@ -56,5 +56,12 @@ public class SenhaController {
 			return "Erro";
 		}
 	}
+	
+
+	@RequestMapping("cont_senhas")
+	public String contarSenhasServico(int idServico, Model model) {
+		int qtd = service.contarSenhasServico(idServico);
+		return "TesteContador";
+	}
 
 }

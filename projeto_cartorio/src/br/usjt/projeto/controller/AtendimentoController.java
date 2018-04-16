@@ -1,3 +1,4 @@
+
 package br.usjt.projeto.controller;
 
 import javax.transaction.Transactional;
@@ -34,6 +35,17 @@ public class AtendimentoController {
 		}
 	}
 	
+	@RequestMapping("/lista_atendimento")
+	public String listaAtendimentoPainel( Model model) {
+		try {
+			
+			return "PainelAtendimentoInterno";
+		}catch(Exception e) {
+			e.printStackTrace();
+			return "Erro";
+		}
+	}
+	
 	@RequestMapping("/fechar_atendimento")
 	public String fecharAtendimento(Atendimento atendimento, Model model) {
 		try {
@@ -60,4 +72,12 @@ public class AtendimentoController {
 		
 		return "TesteTempo";
 	}
+	
+	@RequestMapping("registro_senha")
+	public String registrarAtendimento(Model model) {
+
+		return "RegistroAtendimento";
+	}
+	
+	
 }

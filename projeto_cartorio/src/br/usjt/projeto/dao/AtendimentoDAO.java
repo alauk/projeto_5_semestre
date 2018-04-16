@@ -72,6 +72,7 @@ public class AtendimentoDAO {
 		String sqlSelect = "SELECT atd.id, atd.id_senha, atd.id_subservico, atd.data_inicio, atd.data_termino, atd.status, sub_serv.id_servico FROM atendimento atd"
 				+ " JOIN subservico sub_serv ON atd.id_subservico = sub_serv.id"
 				+ " WHERE sub_serv.id_servico = ? AND atd.data_inicio LIKE ? ?";
+		//DEVE SER ADICIONADO MAIS UMA CONDIÇÃO PARA VERIFICAR O STATUS DO ATENDIMENTO == FECHADO
 		
 		try (PreparedStatement pst = conn.prepareStatement(sqlSelect);){
 			pst.setInt(1, idServico);

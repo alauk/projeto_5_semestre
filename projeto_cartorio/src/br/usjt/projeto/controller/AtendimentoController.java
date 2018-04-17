@@ -53,8 +53,9 @@ public class AtendimentoController {
 			atendimento = atendimentoService.carregar(atendimento.getId());
 			model.addAttribute("atendimento", atendimento);
 			
-			//busca os atendimentos referente a mesma senha que essa sendo atendida
-			
+			/*busca os atendimentos referente a mesma senha que essa sendo atendida 
+			verifica se existe um próximo subserviço para essa senha */
+			atendimentoService.verificarUltimoSubservico(atendimento);
 			
 			//verifica se existe um próximo subserviço para essa senha
 			

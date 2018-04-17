@@ -117,5 +117,12 @@ public class AtendimentoDAO {
 	public void fecharRegistroAtendimento(Atendimento atendimento) {
 		manager.merge(atendimento);
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Atendimento> verificarUltimoSubservico(Atendimento atendimento) {
+		Query query = manager.createQuery("select a from Atendimento a where a.senha :idAtendimento and a.status='ABERTO'");
+		query.setParameter("idAtendimento", atendimento.getSenha());
+		return query.getResultList();
+	}
 
 }

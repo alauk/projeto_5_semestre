@@ -28,6 +28,9 @@ public class AtendimentoService {
 
 	@Autowired
 	private ServicoService servicoService;
+	
+	@Autowired
+	private SenhaService senhaService;
 
 	public void gerarAtendimento(Senha novaSenha, String siglaServico) {
 		Servico servico = servicoService.carregarBySigla(siglaServico);
@@ -85,5 +88,13 @@ public class AtendimentoService {
 
 	public long tempoMedioAtendimentoServico(int idServico, int qtdSenhas) {
 		return dao.tempoMedioAtendimentoServico(idServico, qtdSenhas);
+	}
+	
+	public void verificarUltimoSubservico(Atendimento atendimento) {
+		List<Atendimento> lista = dao.verificarUltimoSubservico(atendimento);
+		
+		if(lista.isEmpty()) {
+			senhaService.finalizarSenha(lista.get(0).getSenha());
+		}
 	}
 }

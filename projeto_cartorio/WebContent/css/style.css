@@ -1,7 +1,340 @@
-@CHARSET "UTF-8";
-/*
- * style.css
- */
-body {
-  padding-top: 50px;
+/**import da font do google**/
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+body{
+  font-family: 'Quicksand', sans-serif;
+  background-color: #fafafa
 }
+
+
+/**estilo do botões **/
+.btn-nova-senha{
+  border-radius: 30px;
+  width: 200px;
+  background-color: #244976;
+  border-color: #4A708B;
+  font-size: 28px;
+  color: #fff;
+}
+.btn-nova-senha:hover,
+.btn-nova-senha:focus {
+  color: #fff;
+  background-color: #204EA5;
+}
+
+.btn-serviço{
+  width: 400px;
+  border-radius: 10px;
+  background-color: #fff;
+  border-color:#4682B4;
+  font-size: 28px;
+  color: #4682B4;
+}
+
+.btn-chamar{
+  border-radius: 30px;
+  width: 200px;
+  background-color: #6BB954;
+  border-color: #6BB954;
+  font-size: 16px;
+  color: #fff;
+}
+.btn-chamar:hover,
+.btn-chamar:focus {
+  color: #fff;
+  background-color: #49AE2A;
+}
+
+
+.btn-encerrar-atendimento{
+  border-radius: 30px;
+  width: 200px;
+  background-color: #E56767;
+  border-color: #E56767;
+  font-size: 16px;
+  color: #fff;
+}
+.btn-encerrar-atendimento:hover,
+.btn-encerrar-atendimento:focus {
+  color: #fff;
+  background-color: #DC3232;
+}
+
+.btn-filtrar{
+  border-radius: 30px;
+  width: 200px;
+  background-color: #244976;
+  border-color: #4A708B;
+  font-size: 16px;
+  color: #fff;
+}
+.btn-filtrar:hover,
+.btn-filtrar:focus {
+  color: #fff;
+  background-color: #204EA5;
+}
+/** Fim estilo dos botões **/
+
+/**estilo dos paineis**/
+.jumbo-nova-senha{
+  background-color: #455a63;
+  border-radius: 50px;
+  height: 440px;
+}
+
+.container-nova-senha{
+  padding-top: 80px;
+  width: 700px;
+}
+
+.jumbo-senha{
+  background-color;
+  border-radius: 10px;
+  height: 440px;
+  width: 350px;
+}
+
+.container-senha{
+  padding-top: 80px;
+  width: 700px;
+}
+
+.senha-texto{
+  font-size: 45px;
+}
+
+.container-painel-atendimento{
+  padding-top: 50px;
+  width: 1500px;
+  height: 100px;
+}
+
+.jumbo-registro-atendimento{
+  background-color: #4A708B;
+  border-radius: 50px;
+  height: auto;
+}
+
+.container-registro-atendimento{
+  padding-top: 10px;
+  width: 1500px;
+  height: 100px;
+}
+
+.jumbo-painel-atendimento{
+  background-color: #244976;
+  border-radius: 50px;
+  height: auto;
+}
+
+.titulo-nova-senha{
+  color: #828282;
+  font-size: 50px;
+}
+
+.titulo-painel-atendimento{
+  color: #fff;
+  font-size: 50px;
+}
+
+.titulo-registro-atendimento{
+  color: #828282;
+  font-size: 50px;
+}
+/**Fim estilo dos paineis**/
+
+/**estilo do dropdown**/
+.dropdown {
+  width: 400px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 2px rgb(204, 204, 204);
+  transition: all .5s ease;
+  position: relative;
+  font-size: 16px;
+  color: #474747;
+  height: 100%;
+  text-align: left
+}
+
+.dropdown .select {
+  cursor: pointer;
+  display: block;
+  padding: 10px
+}
+
+.dropdown .select > i {
+  font-size: 13px;
+  color: #4169E1;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  float: right;
+  line-height: 20px
+}
+
+.dropdown:hover {
+  box-shadow: 0 0 4px rgb(204, 204, 204)
+}
+
+.dropdown:active {
+  background-color: #f8f8f8
+}
+
+.dropdown.active:hover,
+.dropdown.active {
+  box-shadow: 0 0 4px rgb(204, 204, 204);
+  border-radius: 5px 5px 0 0;
+  background-color: #f8f8f8
+}
+
+.dropdown.active .select > i {
+  transform: rotate(-90deg)
+}
+
+.dropdown .dropdown-menu {
+  position: absolute;
+  background-color: #fff;
+  width: 100%;
+  left: 0;
+  margin-top: 1px;
+  box-shadow: 0 1px 2px rgb(204, 204, 204);
+  border-radius: 0 1px 5px 5px;
+  overflow: hidden;
+  display: none;
+  max-height: 144px;
+  overflow-y: auto;
+  z-index: 9
+}
+
+.dropdown .dropdown-menu li {
+  padding: 10px;
+  transition: all .2s ease-in-out;
+  cursor: pointer
+}
+
+.dropdown .dropdown-menu {
+  padding: 0;
+  list-style: none
+}
+
+.dropdown .dropdown-menu li:hover {
+  background-color: #244976;
+  color: #fff;
+}
+
+.dropdown .dropdown-menu li:active {
+  background-color: #4A708B;
+  color: #fff;
+}
+/**Fim estilo do dropdown**/
+
+/** estilo do meu painel (sombras)**/
+.meu-painel {
+  border: none;
+  -webkit-box-shadow: 0px 0px 60px 18px rgba(188,190,194,0.39);
+  -moz-box-shadow: 0px 0px 60px 18px rgba(188,190,194,0.39);
+  box-shadow: 0px 0px 60px 18px rgba(188,190,194,0.39);
+  background-color: #fff;
+}
+
+}
+.meu-painel>.panel-heading {
+  color: #fff;
+  background-color: #48D1CC;
+  border-color: #fff;
+  text-align:center;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom: -10px;
+  padding: 0px 15px;
+}
+/** Fim estilo do painel**/
+
+/******************************************************************************/
+
+
+/**estilo side menu**/
+#wrapper{padding:90px 15px;}
+.navbar-expand-lg .navbar-nav.side-nav{flex-direction: column;}
+.card{margin-bottom: 15px; border-radius:0; box-shadow: 0 3px 5px rgba(0,0,0,.1); }
+.header-top{box-shadow: 0 3px 5px rgba(0,0,0,.1)}
+.leftmenutrigger, .navbar-nav li a .shortmenu{display: none}
+.card-title{ font-size: 28px}
+@media(min-width:992px) {
+.leftmenutrigger{display: block;display: block;margin: 7px 20px 4px 0;cursor: pointer;}
+#wrapper{padding: 90px 15px 15px 75px; }
+#wrapper.open{padding: 90px 15px 15px 225px; }
+.navbar-nav.side-nav.open {left:0;}
+.side-nav li a {padding: 30px}
+.navbar-nav li a .shortmenu {float: right;display: block;opacity: 1}
+.navbar-nav.side-nav.open.navbar-nav li a .shortmenu {opacity: 0}
+.navbar-nav.side-nav{background: #244976;box-shadow: 2px 1px 2px rgba(0,0,0,.1);position:fixed;top:56px;flex-direction: column!important;left:-140px;width:200px;bottom:0;padding-bottom:40px}
+}
+.animate{-webkit-transition:all .1s ease-in-out;-moz-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;-ms-transition:all .2s ease-in-out;transition:all .2s ease-in-out}
+.navbar-nav li a svg{font-size: 25px;float: left;margin: 0 10px 0 5px;}
+.side-nav li { border-bottom: 1px solid #244976;}
+.side-nav .dropdown {position:initial;}
+.side-nav .dropdown-menu {position:relative;opacity:0;left:120%;top:0;height:100%;border:0;padding:0;margin:0;border-radius:0;box-shadow:5px 0 5px rgba(0,0,0,.1);background:#eee;visibility: hidden;display:block;transition: .4s ease all;}
+.side-nav .dropdown-menu.show {left:100%;opacity:1;visibility: visible;display:block;transition: .4s ease all;}
+/** Fim estilo side menu**/
+
+
+
+/* estilo checkbox */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 5px;
+}
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.container input:checked ~ .checkmark {
+    background-color:#6BB954;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+/*Fim estilo checkbox */

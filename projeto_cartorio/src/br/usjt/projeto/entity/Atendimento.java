@@ -25,7 +25,7 @@ public class Atendimento {
 
 	@Column(name = "data_inicio")
 	private Date dataInicio;
-	
+
 	@Column(name = "data_termino")
 	private Date dataTermino;
 

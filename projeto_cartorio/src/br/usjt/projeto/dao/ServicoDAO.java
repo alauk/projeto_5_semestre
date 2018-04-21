@@ -26,6 +26,10 @@ public class ServicoDAO {
 		query.setParameter("sigla", siglaServico);
 		return (Servico) query.getSingleResult();
 	}
-	
 
+	public Servico carregarById(int servico) {
+		Query query = manager.createQuery("select s from Servico s where s.id = :id");
+		query.setParameter("id", servico);
+		return (Servico) query.getSingleResult();
+	}
 }

@@ -18,4 +18,8 @@ public class SubServicoService {
 	public List<SubServico> carregarByServico(Servico servico) {
 		return dao.carregarByServico(servico);
 	}
+	
+	public SubServico carregar(int subServico) {
+		return dao.carregarById(subServico);
+	}
 }

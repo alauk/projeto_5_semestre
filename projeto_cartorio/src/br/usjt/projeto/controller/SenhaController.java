@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.usjt.projeto.entity.Senha;
+import br.usjt.projeto.entity.Servico;
 import br.usjt.projeto.service.AtendimentoService;
 import br.usjt.projeto.service.FilaService;
 import br.usjt.projeto.service.SenhaService;
@@ -25,7 +26,7 @@ public class SenhaController {
 
 	@Autowired
 	private FilaService filaService;
-	
+
 	@Autowired
 	private AtendimentoService atendimentoService;
 
@@ -42,10 +43,13 @@ public class SenhaController {
 	}
 
 	@RequestMapping("/gera_senha")
-	public String geraSenha(String fila, String servico) {
+	public String geraSenha(String fila, String servico, Model model) {
 		try {
 			Senha novaSenha = service.gerarSenha(fila, servico);
 			atendimentoService.gerarAtendimento(novaSenha, servico);
+			Servico novoServico = servicoService.carregarBySigla(servico);
+			model.addAttribute("senha", novaSenha);
+			model.addAttribute("servico", novoServico);
 			return "SenhaGerada";
 		} catch (Exception e) {
 			e.printStackTrace();

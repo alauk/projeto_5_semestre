@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -15,6 +16,20 @@
 	<body>
 		<div id="main" class="container">
         	<h3 class="page-header">Senha Gerada</h3>
+        	<c:set var="senha" value="${senha}"></c:set>
+        	<br>
+        	<div id="nota" class="row col-md-12">
+        	<div class="row col-md-4" align="center"></div>
+        	
+        	<div id="amarela" class="row col-md-4" align="center" style="background-color: #F7E99F; align-content: center">
+        		<h3><b>Senha</b></h3><hr>
+        		<h1><b>${senha.codigo}</b></h1><hr>
+        		<h3>${servico.nome}</h3>
+        		<h3><fmt:formatDate pattern="dd/MM/yyyy HH:mm:ss" value="${senha.dataAbertura}"></fmt:formatDate></h3>
+        	</div>	
+        	
+        	<div class="row col-md-4" align="center"></div>
+        	</div>
         </div>
 	</body>
 </html>

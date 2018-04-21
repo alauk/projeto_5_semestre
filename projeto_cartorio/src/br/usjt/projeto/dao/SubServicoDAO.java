@@ -24,4 +24,9 @@ public class SubServicoDAO {
 		return query.getResultList();
 	}
 	
+	public SubServico carregarById(int subServico) {
+		Query query = manager.createQuery("select s from SubServico s where s.servico = :subServico");
+		query.setParameter("subServico", subServico);
+		return (SubServico) query.getSingleResult();
+	}
 }

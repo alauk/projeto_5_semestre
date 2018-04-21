@@ -22,4 +22,12 @@ public class ServicoService {
 		return dao.carregarBySigla(siglaServico);
 	}
 
+	public Servico carregar(int servico) {
+		return dao.carregarById(servico);
+	}
+
+	public List<Servico> carregarServicos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
